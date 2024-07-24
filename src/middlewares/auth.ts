@@ -23,7 +23,7 @@ if (!user) {
     next(new UnauthorizedException('Unauthorized', ErrorCode.UNAUTHORIZED))
 }
 // 5. to attach the user to the current request obejct
-req.user = user as { id: number; email: string; name: string | null; password: string; createdAt: Date; updatedAt: Date; };
+req.user = user as any
 next()
 }
 catch(error) {
